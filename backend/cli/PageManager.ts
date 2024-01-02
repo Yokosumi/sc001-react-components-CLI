@@ -17,11 +17,9 @@ export class PageManager {
 		tools.createFile(
 			/*html*/ `src/pages/${this.fileName}`,
 			/*html*/ `
-        export const Page${this.idCode} = () => {
-            return (
-                <p>This is the ${this.idCode} page </p>
-            )
-        }`
+    export const Page${this.idCode} = () => {
+	return <p>This is the ${this.idCode} page </p>;
+};`
 		);
 	}
 }
