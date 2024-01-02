@@ -10,7 +10,7 @@ export class PageManager {
 		}
 
 		this.idCode = tools.capitalizeFirstCharacter(idCode);
-		this.fileName = `Page${idCode}.tsx}`;
+		this.fileName = `Page${idCode}.tsx`;
 	}
 
 	public createPage() {
