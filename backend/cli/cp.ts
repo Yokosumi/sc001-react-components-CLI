@@ -1,3 +1,5 @@
+import * as tools from "./tools";
+
 const pageIdCode = process.argv[2];
 
 const pageFileName = `Page${pageIdCode}.tsx`;
