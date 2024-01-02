@@ -1,19 +1,16 @@
 import * as tools from "./tools";
+import { PageManager } from "./PageManager";
 
-const pageIdCode = tools.getArgument(0); // returns index 2 of process.argv
-// const option = tools.getArgument(1); // returns index 3 of process.argv
+const pageIdCode = tools.getArgument(0);
 
-const pageFileName = `Page${pageIdCode}.tsx`;
-const pathAndFileName = `./src/pages/${pageFileName}`;
-
-console.log(`Creating ${pageFileName}...`);
-
-tools.createFile(
-	pathAndFileName,
-	`
-export const ${pageIdCode} = () => {
-	return (
-		<p>This is the ${pageIdCode.toLowerCase()} page.</p>
-	)
-}`
-);
+try {
+	const pageManager = new PageManager(pageIdCode);
+	pageManager.createPage();
+} catch (e) {
+	console.log(
+		`
+    Please specify a page name in pascal notation.
+    e.g. "npm run cp QuarterlyReports"
+    `.trim()
+	);
+}
