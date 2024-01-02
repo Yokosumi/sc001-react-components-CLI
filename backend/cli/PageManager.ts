@@ -13,7 +13,7 @@ export class PageManager {
 		this.fileName = `Page${idCode}.tsx}`;
 	}
 
-	public createaPage() {
+	public createPage() {
 		tools.createFile(
 			/*html*/ `src/pages/${this.fileName}`,
 			/*html*/ `
